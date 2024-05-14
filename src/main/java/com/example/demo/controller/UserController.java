@@ -29,13 +29,6 @@ public class UserController {
     }
 
     // 登录校验路由
-    @RequestMapping(value = "/login1", method = RequestMethod.GET)
-    public String aa() {
-        UserList us = userService.quert("小刚");
-
-        System.out.println(us);
-        return us.toString();
-    }
 
 
 }

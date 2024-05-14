@@ -14,7 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  **/
 //Document注解表明对应了MongoDB中的user表。
 @Document(collection = "userList")
-
 public class UserList {
     @Id
     private String username;

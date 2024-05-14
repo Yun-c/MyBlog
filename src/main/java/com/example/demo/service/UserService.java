@@ -1,12 +1,22 @@
 package com.example.demo.service;
 
 import com.example.demo.dao.UserList;
-import com.mongodb.connection.QueryResult;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.Collections;
 
 /**
  * @program: demo
@@ -17,15 +27,23 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  **/
 @Service
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Transactional
+@RequiredArgsConstructor
 public class UserService {
-    @Autowired
-    private CityAuthentication cityAuthentication;
+    private final ReactiveMongoTemplate reactiveMongoTemplate;
+    private final UserAuthentication userAuthentication;
 
-    public UserList quert(String username) {
-        UserList s = cityAuthentication.queryDataByUser(username);
-        return s;
+    public Mono<UserList> createUser(UserList userList){
+
+        return userAuthentication.save(userList);
     }
+
+    public Flux<UserList> getAllUsers(){
+        return userAuthentication.findAll();
+    }
+
+    public Mono<UserList> findById(String name){
+        return userAuthentication.findById(name);
+    }
+
 }
