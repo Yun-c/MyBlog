@@ -1,6 +1,8 @@
 package com.example.demo.dao;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,17 +15,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @Version 1.0
  **/
 //Document注解表明对应了MongoDB中的user表。
+@NoArgsConstructor
+@AllArgsConstructor
 @Document(collection = "userList")
 public class UserList {
     @Id
+    private String id;
     private String username;
-
     private String password;
-
-    public UserList(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
 
     public String getUsername() {
         return username;
@@ -44,7 +43,8 @@ public class UserList {
     @Override
     public String toString() {
         return "userInfo{"+
-                "username="+username+
+                "id="+id+
+                ",username="+username+
                 ",password="+password+
                 "}";
     }

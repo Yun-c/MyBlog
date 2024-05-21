@@ -1,22 +1,15 @@
 package com.example.demo.service;
 
 import com.example.demo.dao.UserList;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.example.demo.mapper.UserAuthentication;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.Collections;
 
 /**
  * @program: demo
@@ -37,13 +30,24 @@ public class UserService {
 
         return userAuthentication.save(userList);
     }
-
     public Flux<UserList> getAllUsers(){
         return userAuthentication.findAll();
     }
-
-    public Mono<UserList> findById(String name){
-        return userAuthentication.findById(name);
+    public Mono<UserList> findById(String id){
+        return userAuthentication.findById(id);
     }
+    public Flux<UserList> findByName(String username){
+        Query name = new Query(Criteria.where("name").is(username));
+        return reactiveMongoTemplate.find(name,UserList.class);
+    }
+
+    public Mono<UserList> saveUser(String name,String password){
+        UserList userList = new UserList();
+        userList.setUsername(name);
+        userList.setPassword(password);
+        return userAuthentication.save(userList);
+    }
+
+
 
 }

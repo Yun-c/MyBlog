@@ -5,6 +5,7 @@ import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 /**
  * @program: demo
@@ -21,14 +22,20 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     UserService userService;
-
     // 登录页面路由
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
-        return "loginPage";
+    @RequestMapping(value = "/login")
+    public String login(String username,String password) {
+        System.out.println(username+password);
+        Flux<UserList> byName = userService.findByName(username);
+        if (byName.collectList().block().isEmpty()){
+            return "register";
+        }else{
+            return "loginPage";
+        }
     }
 
     // 登录校验路由
+
 
 
 }
