@@ -37,7 +37,7 @@ public class UserService {
         return userAuthentication.findById(id);
     }
     public Flux<UserList> findByName(String username){
-        Query name = new Query(Criteria.where("name").is(username));
+        Query name = new Query(Criteria.where("username").is(username));
         return reactiveMongoTemplate.find(name,UserList.class);
     }
 

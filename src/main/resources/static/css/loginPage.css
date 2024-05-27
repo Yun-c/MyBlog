@@ -1,0 +1,52 @@
+body{
+    margin: auto;
+    padding: 0;
+    font-family: sans-serif;
+    background-size: cover;
+    background-image: url("/static/starPictures/159.png");
+    opacity: 90%;
+}
+.box div[class="title"]{
+    color: red;
+    padding: 14px 40px;
+
+}
+.box h1{
+    margin-top: 200px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+}
+.box input{
+    border-radius: 24px;
+    border: 2px solid;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box button{
+    border-radius: 24px;
+    border: 2px solid;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box input:hover{
+    border: 2px  solid lightcoral ;
+    transform: scale(1.1);
+}

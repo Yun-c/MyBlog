@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="../static/fontawesome/css/all.min.css">
+    <link rel="stylesheet"  type="text/css" href="../static/css/index.css">
     <title>两列布局示例</title>
 </head>
 <body>
@@ -15,14 +15,17 @@
             <li><a href="#" title="Mysterious"><i class="fa-brands fa-pagelines"></i></a></li>
             <li><a href="#" title="Discuss"><i class="fa-brands fa-waze"></i></a></li>
             <li><a href="#" title="Message"><i class="fa-solid fa-envelope"></i></a></li>
-            <li><a href="#" title="User"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="../templates/loginPage.html" title="User"><i class="fa-solid fa-user"></i></a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section class="column column-left">
         <!-- 左列内容 -->
-        <p>这里是左列的内容。</p>
+        <div id="star">
+            <script type="module" src="../static/js/stars.js"></script>
+        </div>
+
     </section>
     <section class="column column-right">
         <!-- 右列内容 -->
