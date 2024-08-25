@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>注册页面</title>
+    <link rel="stylesheet" href="../static/css/register.css">
+    <script  src="../static/js/register.js"></script>
 </head>
 <body>
+<form id="re-form" name="registerForm" method="post">
+    <label for="username">用户名:</label><br>
+    <input type="text" id="username" name="username" required minlength="3" maxlength="20" placeholder="请输入用户名"><br>
 
+    <label for="password">密码:</label><br>
+    <input type="password" id="password" name="password" required minlength="6" placeholder="请输入密码"><br>
+
+    <label for="email">邮箱:</label><br>
+    <input type="email" id="email" name="email" required placeholder="请输入有效的邮箱地址"><br>
+
+    <label for="confirm-password">确认密码:</label><br>
+    <input type="password" id="confirm-password" name="confirm-password" required minlength="6" placeholder="请再次输入密码"><br>
+
+    <button id="register" type="button"  onclick="registerjs()">Register</button>
+</form>
+
+<!-- 提示：在真实环境中，表单的action属性应指向服务器上一个能够处理表单数据的URL -->
 </body>
 </html>

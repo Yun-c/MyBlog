@@ -19,7 +19,8 @@ public enum LoginResultEnum {
         SUCCESS(true,100,"登录成功"),
         NOT_FOUND(false,200,"用户不存在"),
         ERROR_PASSWORD(false,300,"密码错误"),
-        ABNORMAL(false,400,"用户异常，联系管理员处理")
+        ABNORMAL(false,400,"用户异常，联系管理员处理"),
+        ALREADY_EXISTS(false,500,"用户已存在")
         ;
 
         private final Boolean success;

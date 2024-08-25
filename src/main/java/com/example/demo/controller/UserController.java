@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dao.UserList;
 import com.example.demo.responseEntiy.LoginResultEnum;
+import com.example.demo.responseEntiy.RegisterEnum;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,9 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @program: demo
@@ -28,6 +31,7 @@ import java.util.Map;
 public class UserController {
     @Autowired
     UserService userService;
+
     // 登录页面路由
     @PostMapping(value = "/login")
     public ResponseEntity<?> login(@RequestBody UserList userList) {
@@ -45,7 +49,7 @@ public class UserController {
         if (block == null || block.isEmpty()) {
             status = LoginResultEnum.NOT_FOUND;
             System.out.println("block为空");
-        }else if (block.size() > 1) {
+        } else if (block.size() > 1) {
             status = LoginResultEnum.ABNORMAL;
             System.out.println("block异常");
         } else {
@@ -55,14 +59,14 @@ public class UserController {
                 String dbUsername = list.getUsername();
                 //密码 用户名校验
                 if (!dbUsername.equals(username)) {
-                    System.out.println("用户名:"+list.getUsername());
+                    System.out.println("用户名:" + list.getUsername());
                     status = LoginResultEnum.NOT_FOUND;
                 } else if (!dbPassword.equals(password)) {
                     status = LoginResultEnum.ERROR_PASSWORD;
-                    System.out.println("用户名:"+list.getUsername());
-                }else{
+                    System.out.println("用户名:" + list.getUsername());
+                } else {
                     status = LoginResultEnum.SUCCESS;
-                    System.out.println("dbusername"+dbUsername+"dbPassword:"+dbPassword);
+                    System.out.println("dbusername" + dbUsername + "dbPassword:" + dbPassword);
                 }
             }
         }
@@ -71,7 +75,28 @@ public class UserController {
     }
 
     // 注册路由
+    @PostMapping(value = "/register")
+    public ResponseEntity<?> register(@RequestBody UserList userList) {
+
+        //todo 注册开发
+        //用户信息
+        String username = userList.getUsername();
+        String password = userList.getPassword();
+
+        //开始注册
+        Flux<UserList> byName = userService.findByName(username);
+        List<UserList> block = byName.collectList().block();
+
+        if (block == null || block.isEmpty()) {
+
+            Mono<UserList> userListMono = userService.saveUser(username, password);
+            System.out.println(Objects.requireNonNull(userListMono.block()));
+
+            return new ResponseEntity<>(RegisterEnum.SUCCESS.getCode(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(RegisterEnum.ALREADY_EXISTS.getCode(), HttpStatus.OK);
+        }
 
 
-
+    }
 }

@@ -7,15 +7,18 @@
     <script  src="../static/js/loginPage.js"></script>
 </head>
 
-<body >
+<body>
     <div class="box">
         <form id="loginForm" name="loginForm" method="post">
             <h1>Login</h1>
-                <input type="text" id="username" name="username" placeholder="Username">
-                <input type="text" id="password" name="password" placeholder="password">
+                <input type="text" id="username" name="username" placeholder="username">
+                <input type="password" id="password" name="password" placeholder="password">
                 <button id="LoginUi" type="button" name="LoginUi" onclick="loginjs()">Login</button>
-                <button id="register" name="Register" value="Register">Register</button>
         </form>
+        <div class="mess">
+            Don't have account ?
+            <a href='../templates/register.html'>Sign up</a>
+        </div>
     </div>
 </body>
 </html>
