@@ -5,31 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../static/fontawesome/css/all.min.css">
     <link rel="stylesheet"  type="text/css" href="../static/css/index.css">
+    <script  src="../static/js/bubble.js"></script>
     <title>两列布局示例</title>
 </head>
 <body>
 <header>
-    <nav>
+    <nav id="header-left">
         <ul>
             <li><a href="#" title="Home"><i class="fa-solid fa-tree"></i></a></li>
             <li><a href="#" title="Mysterious"><i class="fa-brands fa-pagelines"></i></a></li>
             <li><a href="#" title="Discuss"><i class="fa-brands fa-waze"></i></a></li>
             <li><a href="#" title="Message"><i class="fa-solid fa-envelope"></i></a></li>
-            <li><a href="../templates/loginPage.html" title="User"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="../templates/personalCenter.html" title="PersonalCenter"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </nav>
+    <nav id="header-right">
+        <ul>
+            <li><a href="../templates/loginPage.html" title="Login"><i class="fa-sharp fa-solid fa-right-to-bracket"></i></a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <section class="column column-left">
-        <!-- 左列内容 -->
-        <div id="star">
-            <script type="module" src="../static/js/stars.js"></script>
-        </div>
+    <section class="main">
 
-    </section>
-    <section class="column column-right">
-        <!-- 右列内容 -->
-        <p>这里是右列的内容。</p>
+
+
+        <div class="menu">
+            <div class="scroll-container">
+                <span class="scroll-text">滚动的中文文字内容</span>
+            </div>
+            <canvas class="bubble" width="1000" height="800">
+
+            </canvas>
+<!--            <div class="one"><a href="#">生成表结构</a></div>-->
+<!--            <div class="two"><a href="#">生成字符串</a></div>-->
+<!--            <div class="three"><a href="#">文件加密&解密</a></div>-->
+        </div>
     </section>
 </main>
 </body>
