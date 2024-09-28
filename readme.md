@@ -3,13 +3,11 @@
 ![Static Badge](https://img.shields.io/badge/web项目初探-red)
 ![GitHub Release](https://img.shields.io/github/v/release/Yun-c/demo)
 ## Introduction - 介绍
-    个人博客项目，旨在搭建个人博客，实现博客基础功能，并添加个人特色功能
+    个人博客项目，旨在搭建个人博客，实现博客基础功能，并添加个人特色功能，同时保存一些日常工作中的数据接口完成
 ### Summary - 概要
     1.基本功能设计
         1.1 登录 
         1.2 注册
-        1.3 添加/删除好友
-        1.4 用户个人信息界面
     2.基本页面设计
         2.1 博客主页面
         2.2 发表博客  
