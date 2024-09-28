@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60vw;
+    background-image: linear-gradient(to top,#9795F0 0%,#FBC8D4 100%);
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60vw;
+    height: 40vw;
+    max-width: 380px;
+    max-height: 250px;
+    margin: 0 auto;
+    color: white;
+    perspective: 1000px;
+    transform-origin: center;
+}
+.slider-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-30vw) rotateY(0);
+    animation: carousel 16s infinite cubic-bezier(.11,0.64,0.78,0.28) forwards;
+}
+
+.slider-item{
+    position: absolute;
+    width: 60vw;
+    height: 40vw;
+    max-width: 800px;
+    max-height: 650px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    background-size: cover;
+    -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%,rgba(255,255,255,0.3));
+}
+.slider-item:nth-child(1){
+    background-image: url("/static/starPictures/545.jpg");
+    transform: rotateY(0) translateZ(35vw);
+}
+
+.slider-item:nth-child(2){
+    background-image: url("/static/starPictures/191853.jpg");
+    transform: rotateY(120deg) translateZ(35vw);
+}
+
+.slider-item:nth-child(3){
+    background-image: url("/static/starPictures/204.jpg");
+    transform: rotateY(240deg) translateZ(35vw);
+}
+
+@keyframes carousel {
+    0%,
+    17.5%{
+        transform: translateZ(-35vw) rotateY(0);
+    }
+    27.5%,
+    45%{
+        transform: translateZ(-35vw) rotateY(-120deg);
+    }
+    55%,
+    72.5%{
+        transform: translateZ(-35vw) rotateY(-240deg);
+    }
+    82.5%,
+    100%{
+        transform: translateZ(-35vw) rotateY(-360deg);
+    }
+}

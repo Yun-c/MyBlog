@@ -1,9 +1,14 @@
 package com.example.demo;
 
+import com.example.demo.dao.UserList;
 import com.example.demo.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 @SpringBootTest
 public class DemoApplicationTests {
@@ -29,13 +34,13 @@ public class DemoApplicationTests {
 //            }
 //        });
 //
-//        Flux<UserList> userListFlux = userService.findByName("小明");
-//        System.out.println("查询3----");
-//        List<UserList> block1 = userListFlux.collectList().block();
-//        for (UserList userList : block1) {
-//            System.out.println(userList.toString());
-//        }
-//
+        Flux<UserList> userListFlux = userService.findByName("小明");
+        System.out.println("查询3----");
+        List<UserList> block1 = userListFlux.collectList().block();
+        for (UserList userList : block1) {
+            System.out.println(userList.toString());
+        }
+
 //        System.out.println("保存3----");
 //        Mono<UserList> listMono1 = userService.saveUser("小红", "3434");
 //        UserList block2 = listMono1.block();
