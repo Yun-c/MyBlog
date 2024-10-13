@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: relative;
+}
+
+
+.title{
+    border-radius: 10px;
+    height: 100%;
+    margin: 20px auto; /* 上下边距为20px，左右自动居中 */
+    padding: 20px; /* 内部填充 */
+    border: 2px solid #007BFF; /* 边框样式 */
+    background-color: #f8f9fa; /* 背景颜色 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+.file-body{
+    border-radius: 10px;
+    height: 100%;
+    margin: 20px auto; /* 上下边距为20px，左右自动居中 */
+    padding: 20px; /* 内部填充 */
+    border: 2px solid #007BFF; /* 边框样式 */
+    background-color: #f8f9fa; /* 背景颜色 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+
+
+
+

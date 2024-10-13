@@ -1049,7 +1049,7 @@ files:
     - paste
     - photo-film
     - scissors
-  label: Files
+  label: MyFiles
 film-video:
   icons:
     - audio-description
