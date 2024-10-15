@@ -3,34 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script  src="../static/js/fileUpload.js"></script>
+    <script  src="../static/js/fileBrowse.js"></script>
     <script  src="../static/js/getFileList.js"></script>
     <link rel="stylesheet" href="../static/css/personPage.css">
 </head>
 <body>
-    <div class="title">
-        <div class="upload-file">
-            <form>
-                <input type="file" id="uploadFile" name="file" />
-                <button type="button" onclick="fileUpload()">上传</button>
-            </form>
-        </div>
-    </div>
+    <p>文件浏览</p>
     <div class="file-body">
         <label>服务器文件列表</label>
-        <button type="button" onclick="getFileList()">刷新</button>
         <table>
             <thead>
             <tr>
                 <th>文件名</th>
-                <th>类型</th>
-                <th>修改时间</th>
+                <th>绝对路径</th>
+                <th>大小</th>
             </tr>
             </thead>
             <tbody id="file-list">
             <!-- 文件加载位置-->
             </tbody>
         </table>
+        <input type="file" id="fileInput" multiple style="display:none;" formenctype="multipart/form-data">
+        <button id="uploadButton" type="button">上传</button>
+        <button type="button" onclick="getFileList()">刷新</button>
     </div>
 
 </body>

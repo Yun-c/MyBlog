@@ -7,25 +7,56 @@ body{
     position: relative;
 }
 
+p{
+    /* 设置背景色 */
+    background-color: #116644;
+    /* 设置内边距 */
+    padding: 20px;
+    /* 设置文本颜色 */
+    color: #f2f2f2;
+    /* 设置字体大小和字体家族 */
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    /* 设置文本对齐方式 */
+    text-align: center;
+    /* 可选：设置最大宽度和自动换行 */
+    margin: 0 auto; /* 使元素水平居中 */
+}
 
 .title{
-    border-radius: 10px;
-    height: 100%;
-    margin: 20px auto; /* 上下边距为20px，左右自动居中 */
-    padding: 20px; /* 内部填充 */
+    position: relative;
+    height: 4vh;
     border: 2px solid #007BFF; /* 边框样式 */
-    background-color: #f8f9fa; /* 背景颜色 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    border-radius: 10px;
+    width: 80%;
+}
+
+.upload-file{
+    position: relative;
 }
 
 .file-body{
+    position: relative;
     border-radius: 10px;
     height: 100%;
-    margin: 20px auto; /* 上下边距为20px，左右自动居中 */
+    margin: 20px 10%; /* 上下边距为20px，左右自动居中 */
     padding: 20px; /* 内部填充 */
-    border: 2px solid #007BFF; /* 边框样式 */
-    background-color: #f8f9fa; /* 背景颜色 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 10px solid transparent; /* 设置边框宽度和透明色 */
+    padding: 10px;
+    text-align: left;
+}
+
+/* 可选的：为表头设置不同的背景色或字体样式 */
+thead th {
+    background-color: #f2f2f2;
 }
 
 

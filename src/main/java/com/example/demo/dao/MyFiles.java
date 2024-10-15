@@ -11,7 +11,7 @@ package com.example.demo.dao;
 
 public class MyFiles {
 
-    private String fileName;
+    private String file_name;
     private String filePath;
     private String fileType;
     private String fileSize;
@@ -19,19 +19,19 @@ public class MyFiles {
     public MyFiles() {
     }
 
-    public MyFiles(String fileName, String filePath, String fileType, String fileSize) {
-        this.fileName = fileName;
+    public MyFiles(String file_name, String filePath, String fileType, String fileSize) {
+        this.file_name = file_name;
         this.filePath = filePath;
         this.fileType = fileType;
         this.fileSize = fileSize;
     }
 
-    public String getFileName() {
-        return fileName;
+    public void setFile_name(String file_name) {
+        this.file_name = file_name;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public String getFile_name() {
+        return file_name;
     }
 
     public String getFilePath() {

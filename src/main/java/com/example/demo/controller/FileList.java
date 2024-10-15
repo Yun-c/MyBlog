@@ -40,10 +40,11 @@ public class FileList {
            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
 //                System.out.println(file.toAbsolutePath());
                String file_name = file.getFileName().toString();
+               System.out.println(file_name);
                long length = file.toFile().length()/1024;
                String file_path = file.toAbsolutePath().toString();
                MyFiles myFiles = new MyFiles();
-               myFiles.setFileName(file_name);
+               myFiles.setFile_name(file_name);
                myFiles.setFileSize(length+"KB");
                myFiles.setFilePath(file_path);
                list.add(myFiles);

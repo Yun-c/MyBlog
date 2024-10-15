@@ -33,7 +33,7 @@ public class GetFileLIst {
                 long length = file.toFile().length()/1024;
                 String file_path = file.toAbsolutePath().toString();
                 MyFiles myFiles = new MyFiles();
-                myFiles.setFileName(file_name);
+                myFiles.setName(file_name);
                 myFiles.setFileSize(length+"KB");
                 myFiles.setFilePath(file_path);
                 list.add(myFiles);
