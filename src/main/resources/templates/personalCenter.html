@@ -17,15 +17,23 @@
                 <th>文件名</th>
                 <th>绝对路径</th>
                 <th>大小</th>
+                <th><label>
+                    <input type="checkbox">
+                </label></th>
+
             </tr>
             </thead>
             <tbody id="file-list">
             <!-- 文件加载位置-->
             </tbody>
         </table>
-        <input type="file" id="fileInput" multiple style="display:none;" formenctype="multipart/form-data">
-        <button id="uploadButton" type="button">上传</button>
-        <button type="button" onclick="getFileList()">刷新</button>
+        <div class="button-list">
+            <input type="file" id="fileInput" multiple style="display:none;" formenctype="multipart/form-data">
+            <button id="uploadButton" type="button">上传</button>
+            <button id="refresh-button" type="button" onclick="getFileList()">刷新</button>
+<!--            <button id="handle-button" type="button">解密</button>-->
+        </div>
+
     </div>
 
 </body>

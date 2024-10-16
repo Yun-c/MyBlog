@@ -13,7 +13,7 @@ function getFileList(){
                             <td>${files.file_name}</td>
                             <td>${files.filePath}</td>  
                             <td>${files.fileSize}</td>  
-                            <td><input type="checkbox"></td>  
+                            <td><button id="handle-button" type="button">解密</button></td>  
                         `;
                 tbody.appendChild(row);
             })
